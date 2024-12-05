@@ -36,9 +36,21 @@ public class App implements Mediator{
         return users.get(id);
     }
 
+    @Override
+    public void deliverMessage(String id, String recipientId, String content) {
+        // create a new message
+        User user1 = findUser(id);
+        User user2 = findUser(recipientId);
 
+        Message message = new Message();
+        message.setContent(content);
+        message.setFrom(user1);
+        message.setTo(user2);
 
+        System.out.println(message);
 
+        // DO REST ANOTHER TIME....
 
+    }
 
 }

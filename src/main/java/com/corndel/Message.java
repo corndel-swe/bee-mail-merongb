@@ -1,16 +1,14 @@
 package com.corndel;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 
 @Getter
 @Setter
-
+@NoArgsConstructor
+@ToString
 public class Message {
     private String id;
     private LocalDateTime timestamp;
@@ -19,8 +17,4 @@ public class Message {
     private User to;
     private boolean delivered = false;
     private boolean read = false;
-
-
-
-
 }

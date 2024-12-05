@@ -1,11 +1,9 @@
 package com.corndel;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
+@ToString
 public class User {
 
         private String id;
@@ -25,4 +23,8 @@ public class User {
     }
 
 
+    public void sendMessage(String id, String content) {
+        // deliverMessage(senderId: str, recipientId: str, content: str)
+        app.deliverMessage(this.id, id, content);
+    }
 }

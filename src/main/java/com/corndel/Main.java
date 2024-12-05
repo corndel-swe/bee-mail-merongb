@@ -19,6 +19,11 @@ public class Main {
 
         System.out.println(app.findUser("1"));
 
+        // alice sends message to bob
+        // alice will be stored on the mediator
+        // sendMessage() -> sendMessage(recipientId: str, content: str)
+        alice.sendMessage("2", "Hello world!");
+
 
     }
 }
