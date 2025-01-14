@@ -17,4 +17,8 @@ public class Message {
     private User to;
     private boolean delivered = false;
     private boolean read = false;
+
+    public boolean isRead() {
+     return this.read = true;
+    }
 }

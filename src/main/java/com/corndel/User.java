@@ -27,4 +27,11 @@ public class User {
         // deliverMessage(senderId: str, recipientId: str, content: str)
         app.deliverMessage(this.id, id, content);
     }
+
+    public void receiveMessages() {
+        app.receiveMessages(this.id).forEach(message -> {
+            System.out.println("Received message: " + message.getContent());
+        });
+    }
+
 }

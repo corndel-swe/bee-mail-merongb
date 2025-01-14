@@ -1,6 +1,10 @@
 package com.corndel;
 
+import lombok.Getter;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -8,6 +12,8 @@ public class App implements Mediator{
 
     private static App instance;
     private final Map<String, User> users = new HashMap<>();
+
+    private final List<Message> messages = new ArrayList<>();
 
 
     private App() {};
@@ -46,11 +52,23 @@ public class App implements Mediator{
         message.setContent(content);
         message.setFrom(user1);
         message.setTo(user2);
+        messages.add(message);
 
-        System.out.println(message);
+       message.isDelivered();
+
 
         // DO REST ANOTHER TIME....
 
     }
 
+    @Override
+    public List<Message> receiveMessages(String recipientId) {
+        List<Message> userMessages = new ArrayList<>();
+        for (Message message : messages) {
+            if (message.getTo().getId().equals(recipientId)) {
+                userMessages.add(message);
+            }
+        }
+        return userMessages;
+    }
 }

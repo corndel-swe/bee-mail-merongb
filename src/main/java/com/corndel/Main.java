@@ -24,6 +24,7 @@ public class Main {
         // sendMessage() -> sendMessage(recipientId: str, content: str)
         alice.sendMessage("2", "Hello world!");
 
+        bob.receiveMessages();
 
     }
 }
